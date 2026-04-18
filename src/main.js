@@ -26,4 +26,11 @@ timeline.to('#more-img', {
   duration: 1.5,
   opacity: 1,
   ease: 'power1.inOut'
-}, '-=0.5');
+}, '-=0.5')
+// Animate #vb from left with slide-in effect
+.to('#vb', {
+  duration: 1.5,
+  opacity: 1,
+  x: 0,
+  ease: 'power1.inOut'
+});
