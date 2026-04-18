@@ -1,19 +1,29 @@
 import './style.css'
 import { gsap } from 'gsap'
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <h1>Welcome to the Single Page Website!</h1>
-    <p>This page features GSAP animations.</p>
-    <div id="box" style="width: 100px; height: 100px; background: linear-gradient(45deg, #ff6b6b, #4ecdc4); border-radius: 10px; margin: 20px auto;"></div>
-    <button id="animateBtn">Animate!</button>
-  </div>
-`
+// Animation sequence on page load
+const timeline = gsap.timeline();
 
-// Initial animation
-gsap.from("#box", {duration: 1, y: -100, opacity: 0, ease: "bounce"});
-
-// Button click animation
-document.getElementById('animateBtn').addEventListener('click', () => {
-  gsap.to("#box", {duration: 2, rotation: 360, scale: 1.5, ease: "power2.out", yoyo: true, repeat: 1});
-});
+// Fade in the image
+timeline.to('#more-img', {
+  duration: 1,
+  opacity: 1,
+  ease: 'power1.inOut'
+})
+// Hold the image for a moment
+.to('#more-img', {
+  duration: 1.5,
+  opacity: 1
+})
+// Fade out the image
+.to('#more-img', {
+  duration: 1,
+  opacity: 0,
+  ease: 'power1.inOut'
+})
+// Fade in the text
+.to('#quote-text', {
+  duration: 1.5,
+  opacity: 1,
+  ease: 'power1.inOut'
+}, '-=0.5');
