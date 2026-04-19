@@ -9,38 +9,171 @@
   <body>
     <div id="app">
       <div id="hero-container">
-         <div class="lang-toggle">
-            <button id="en-btn" class="lang-btn active">A</button>
-            <button id="mr-btn" class="lang-btn">अ</button>
-          </div>
+        <div class="lang-toggle">
+          <button id="en-btn" class="lang-btn active">A</button>
+          <button id="mr-btn" class="lang-btn">अ</button>
+        </div>
         <div class="button-group">
-         
           <button id="skip-btn" class="skip-btn">Skip</button>
           <span id="step-indicator">1 / 4</span>
           <button id="continue-btn">Continue</button>
+          <!-- <button id="game-btn" style="margin-left: 12px;">Play Game</button> -->
         </div>
         <img id="more-img" src="src/assets/more.png" alt="more" />
         <div class="quote-content step-1">
           <p id="quote-text">When life was simple…</p>
           <img id="vb" width="200px" src="src/assets/10vb.png" alt="vb" />
-          
         </div>
-        <div class="quote-content step-2" style=" align-items: end;">
-          
+        <div class="quote-content step-2" style="align-items: end">
           <p id="bags-text">and happiness fit in a school bag.</p>
           <img id="bags-img" src="src/assets/bags.png" alt="bags" />
         </div>
-         <div class="quote-content step-3" style=" align-items: end;   ">
+        <div class="quote-content step-3" style="align-items: end">
           <p id="book-text">We made it work</p>
-          <img id="book-img" src="src/assets/notebook.png" alt="book" />
+          <img id="book-img" src="src/assets/notebook.png"  />
           <p id="book-text2">with whatever we had</p>
         </div>
-        <div class="quote-content step-4" style=" align-items: end; height: 100vh;     justify-content: start; padding-top: 40px;">
+        <div
+          class="quote-content Remember-content step-5"
+          style="
+            align-items: end;
+            height: 100vh;
+            justify-content: start;
+            padding-top: 40px;
+          "
+        >
           <p id="kismi-text">Do You Remember?</p>
-          <img id="kismi-img" src="src/assets/kismi.png" alt="book" />
+          <p
+            id="perfect-text"
+            style="height: 100%; display: flex; align-items: center"
+          >
+            Not everything was perfect… but everything felt right.
+          </p>
+          <div id="remember-images">
+            <img
+             
+              src="src/assets/kismi.png"
+              
+              style="
+                opacity: 1;
+                width: 210px;
+                position: absolute;
+                top: 120px;
+                right: -20px;
+              "
+            />
+            <img
+             
+              src="src/assets/poppins.png"
+              
+              style="
+                opacity: 1;
+                width: 330px;
+                position: absolute;
+                top: 70px;
+                left: -109px;
+              "
+            />
+            <img
+             
+              src="src/assets/bhingri.png"
+              
+              style="
+                opacity: 1;
+                width: 240px;
+                position: absolute;
+                top: 334px;
+                right: -116px;
+              "
+            />
+            <img
+             
+              src="src/assets/pen.png"
+              
+              style="
+                opacity: 1;
+                width: 268px;
+                position: absolute;
+                top: 293px;
+                left: 84px;
+              "
+            />
+            <img
+             
+              src="src/assets/boomer.png"
+              
+              style="
+                opacity: 1;
+                width: 240px;
+                position: absolute;
+                top: 248px;
+                right: 13px;
+              "
+            />
+            <img
+             
+              src="src/assets/tickly.png"
+              
+              style="
+                opacity: 1;
+                width: 157px;
+                position: absolute;
+                top: 523px;
+                left: 143px;
+              "
+            />
+            <img
+             
+              src="src/assets/game.png"
+              
+              style="
+                opacity: 1;
+                width: 340px;
+                position: absolute;
+                bottom: 120px;
+                left: -149px;
+              "
+            />
+            <img
+             
+              src="src/assets/jahaj.png"
+              
+              style="
+                opacity: 1;
+                width: 296px;
+                position: absolute;
+                bottom: 44px;
+                right: -133px;
+              "
+            />
+            <img
+             
+              src="src/assets/cassette.png"
+              
+              style="
+                opacity: 1;
+                width: 360px;
+                position: absolute;
+                bottom: -120px;
+                left: -24px;
+              "
+            />
+          </div>
+        </div>
+        <div class="quote-content step-6" id="meet-text" style="align-items: end">
+          <p class="meet-text2" >Let’s meet again… and feel it all once more.</p>
+          <button id="game-btn">Play Game</button>
+          <div id="coming-soon">
+            <p>Coming Soon...</p>
+            <p>Attendance</p>
+            <p>More Games</p>
+            <p>Gallery</p>
+            <p>..and more</p>
+          </div>
+        
         </div>
       </div>
     </div>
-    <script type="module" src="/src/main.js"></script> 
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>

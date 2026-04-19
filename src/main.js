@@ -17,25 +17,31 @@ document.addEventListener('DOMContentLoaded', () => {
   const stepIndicator = document.getElementById('step-indicator')
   const enBtn = document.getElementById('en-btn')
   const mrBtn = document.getElementById('mr-btn')
+  const gameBtn = document.getElementById('game-btn')
 
   let currentStep = 1
-  const totalSteps = 4
+  const totalSteps = 7
   let currentLang = 'en'
 
   const contentTexts = {
     en: {
       quote: ["", "When life was simple…", "", "", ""],
       bags: ["", "", "and happiness fit in a school bag.", "", ""],
-      book: ["", "", "", "We made it work", ""],
+      book: ["", "", "", "We made it work,,,", ""],
       book2: ["", "", "", "with whatever we had", ""],
-      kismi: ["", "", "", "", "Do You Remember?"]
+      kismi: ["", "", "", "", "Do You Remember?", "Do You Remember?"],
+      perfectText: ["", "", "", "", "", "Not everything was perfect… but everything felt right."],
+      meetText: ["", "", "", "", "", "Let’s meet again… and feel it all once more."]
     },
     mr: {
       quote: ["", "जेव्हा जीवन सोपे होते…", "", "", ""],
-      bags: ["", "", "आणि आनंद शालेय पिशवीत बसला.", "", ""],
-      book: ["", "", "", "मी सर्व काही केलं", ""],
+      bags: ["", "", "आणि आनंद शाळेच्या पिशवीत मावत होता.", "", ""],
+      book: ["", "", "", "आम्ही सर्व काही केलं...", ""],
       book2: ["", "", "", "आमच्याकडे असलेल्या काही गोष्टी मधून", ""],
-      kismi: ["", "", "", "", "तुम्हाला आठवते का?"]
+      kismi: ["", "", "", "", "तुम्हाला आठवते का?","तुम्हाला आठवते का?"],
+      perfectText: ["", "", "", "", "", "सगळं परफेक्ट नव्हतं... पण सगळं बरोबर वाटायचं."],
+      meetText: ["", "", "", "", "", "पुन्हा भेटूया... आणि पुन्हा एकदा ते सगळं अनुभवूया."]
+
     }
   }
 
@@ -57,7 +63,11 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.timeline({ paused: true }).to('#quote-text', { opacity: 0, duration: .5 }).to('#vb', { opacity: 0, x: 0, duration: 0.5 }, 0).to('#bags-text', { opacity: 1, duration: 1.5 }, 1).to('#bags-img', { opacity: 1, duration: 1.5 }, 1),
     // From step 3 to 4: fade out #vb, fade in #bags-img
     gsap.timeline({ paused: true }).to('#bags-text', { opacity: 0, x: 0, duration: 1 }).to('#bags-img', { opacity: 0, duration: 1.5 }, 0).to('#book-text', { opacity: 1, duration: 1.5 }, 0).to('#book-img', { opacity: 1, duration: 1.5 }, 1).to('#book-text2', { opacity: 1, duration: 1.5 }, 1.5),
-    gsap.timeline({ paused: true }).to('#book-text', { opacity: 0, x: 0, duration: 1 }).to('#book-img', { opacity: 0, duration: 1.5 }, 0).to('#book-text2', { opacity: 0, duration: 1.5 }, 0).to('#kismi-text', { opacity: 1, duration: 1.5 }, 1).to('#kismi-img', { opacity: 1, duration: 1.5 }, 1)
+    // From step 4 to 5: fade out #book-text, fade in #kismi-text
+    gsap.timeline({ paused: true }).to('#book-text', { opacity: 0, duration: 1 }).to('#book-text2', { opacity: 0, duration: 1 }, 0).to('#book-img', { opacity: 0, duration: 1 }, 0).to('#kismi-text', { opacity: 1, duration: 1.5 }, 1).to('#remember-images', { opacity: 1, duration: 1.5 }, 1.5),
+    gsap.timeline({ paused: true }).to('#remember-images', { opacity: 0, duration: 1 }, 0).to('#kismi-text', { opacity: 1, duration: 1.5 }, 1).to('#perfect-text', { opacity: 1, duration: 1.5 }, 1),
+    gsap.timeline({ paused: true }).to('#perfect-text', { opacity: 0, duration: 1 }, 0).to('#kismi-text', { opacity: 0, duration: 1 }, 0).to('#meet-text', { opacity: 1, duration: 1.5 }, 1.5)
+
   ]
 
   // Set initial states for step 1
@@ -70,14 +80,18 @@ document.addEventListener('DOMContentLoaded', () => {
   gsap.set('#book-text2', { opacity: 0 })
   gsap.set('#book-img', { opacity: 0 })
   gsap.set('#kismi-text', { opacity: 0 })
-  gsap.set('#kismi-img', { opacity: 0 })
+  gsap.set('#remember-images', { opacity: 0 })
+  gsap.set('#perfect-text', { opacity: 0 })
+  gsap.set('#meet-text', { opacity: 0 })
 
   function updateControls() {
     console.log(`Current Step: ${currentStep} / ${totalSteps}`)
     const isLast = currentStep === totalSteps
     const texts = buttonTexts[currentLang]
-    skipBtn.textContent = texts.skip
-    continueBtn.textContent = isLast ? texts.finish : texts.continue
+    buttonSet.style.display = isLast ? 'none' : 'flex'
+    // skipBtn.textContent = texts.skip
+
+    // continueBtn.textContent = isLast ? texts.finish : texts.continue
     stepIndicator.textContent = ` ${currentStep}/${totalSteps}`
     // Update all text content
     const langTexts = contentTexts[currentLang]
@@ -86,6 +100,8 @@ document.addEventListener('DOMContentLoaded', () => {
     bookText.textContent = langTexts.book[currentStep - 1]
     bookText2.textContent = langTexts.book2[currentStep - 1]
     kismiText.textContent = langTexts.kismi[currentStep - 1]
+      document.getElementById('perfect-text').textContent = langTexts['perfectText'][currentStep - 1]
+      document.getElementById('meet-text2').textContent = langTexts['meetText'][currentStep - 1]
     // Update lang button active state
     enBtn.classList.toggle('active', currentLang === 'en')
     mrBtn.classList.toggle('active', currentLang === 'mr')
@@ -111,6 +127,9 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.set('#book-img', { opacity: 1 })
     gsap.set('#kismi-text', { opacity: 1 })
     gsap.set('#kismi-img', { opacity: 1 })
+    gsap.set('#remember-images', { opacity: 1 })
+    gsap.set('#perfect-text', { opacity: 1 })
+    gsap.set('#meet-text', { opacity: 1 })
     // Set final texts for step 4
     const langTexts = contentTexts[currentLang]
     quoteText.textContent = langTexts.quote[3]
@@ -147,6 +166,9 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       completeFlow()
     }
+  })
+  gameBtn.addEventListener('click', () => {
+    window.location.href = '/game.html'
   })
 
   // Start at step 1
