@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   })
   gameBtn.addEventListener('click', () => {
-    window.location.href = '/game.html'
+    window.location.href = './game.html'
   })
 
   // Start at step 1
