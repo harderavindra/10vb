@@ -593,7 +593,11 @@ main.gallery-page.page-content {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding: 0;
+    padding: 0 0 120px;
+    position: relative;
+}
+main.gallery-page.page-content .hero-button-group {
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
 }
 .gallery-container {
     flex-grow: 1;
