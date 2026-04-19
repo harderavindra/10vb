@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const enBtn = document.getElementById('en-btn')
   const mrBtn = document.getElementById('mr-btn')
   const gameBtn = document.getElementById('game-btn')
-
+  const buttonSet = document.getElementById('button-set')
   let currentStep = 1
   const totalSteps = 7
   let currentLang = 'en'
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
       book2: ["", "", "", "with whatever we had", ""],
       kismi: ["", "", "", "", "Do You Remember?", "Do You Remember?"],
       perfectText: ["", "", "", "", "", "Not everything was perfect… but everything felt right."],
-      meetText: ["", "", "", "", "", "Let’s meet again… and feel it all once more."]
+      meetText: ["", "", "", "", "","", "Let’s meet again… and feel it all once more."]
     },
     mr: {
       quote: ["", "जेव्हा जीवन सोपे होते…", "", "", ""],
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
       book2: ["", "", "", "आमच्याकडे असलेल्या काही गोष्टी मधून", ""],
       kismi: ["", "", "", "", "तुम्हाला आठवते का?","तुम्हाला आठवते का?"],
       perfectText: ["", "", "", "", "", "सगळं परफेक्ट नव्हतं... पण सगळं बरोबर वाटायचं."],
-      meetText: ["", "", "", "", "", "पुन्हा भेटूया... आणि पुन्हा एकदा ते सगळं अनुभवूया."]
+      meetText: ["", "", "", "", "","", "पुन्हा भेटूया... आणि पुन्हा एकदा ते सगळं अनुभवूया."]
 
     }
   }
