@@ -25,7 +25,7 @@ function GamePage() {
   }, [])
 
   const initGame = () => {
-    const newTiles = Array.from({ length: 16 }, (_, i) => i)
+    const newTiles = Array.from({ length: 15 }, (_, i) => i + 1).concat(0)
     setTiles(newTiles)
     setEmptyIndex(15)
     setMoves(0)
