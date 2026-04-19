@@ -38,7 +38,7 @@ body {
 
 .hero-button-group {
      position: absolute;
-    bottom: calc(100px + env(safe-area-inset-bottom, 0px));
+    bottom: calc(180px + env(safe-area-inset-bottom, 0px));
     left: 0;
     align-items: center;
     gap: 12px;
