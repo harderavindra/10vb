@@ -595,9 +595,10 @@ main.gallery-page.page-content {
     gap: 20px;
     padding: 0 0 120px;
     position: relative;
+        height: 100%;
 }
 main.gallery-page.page-content .hero-button-group {
-    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    bottom: calc(160px + env(safe-area-inset-bottom, 0px));
 }
 .gallery-container {
     flex-grow: 1;
