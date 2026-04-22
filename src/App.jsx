@@ -9,7 +9,7 @@ import BottomToolbar from './components/BottomToolbar.jsx'
 function App() {
   return (
     <BrowserRouter>
-      <div className="app-shell" style={{ height: '100%' }}>
+      <div className="app-shell" style={{ minHeight:'100%' }}>
         <Routes>
           <Route path="/" element={<IntroPage />} />
           <Route path="/gallery" element={<GalleryPage />} />
